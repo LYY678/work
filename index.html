@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>工单服务系统</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1216913_1c9e37g6ehn.css" />
+		<link rel="stylesheet" type="text/css" href="css/workorderlist.css" />
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">工单服务系统</h1><span class="iconfont iconcaidan msg" id="memus"></span>
+		</header>
+		<div class="mui-content">
+			<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+			    <!-- 可选择菜单 -->
+			    <ul class="mui-table-view">
+			      <li class="mui-table-view-cell">
+			        <a href="#">消息</a>
+			      </li>
+			      <li class="mui-table-view-cell">
+			        <a href="#">退出</a>
+			      </li>
+			    </ul>
+			    <!-- 取消菜单 -->
+			    <ul class="mui-table-view">
+			      <li class="mui-table-view-cell">
+			        <a href="#sheet1"><b>取消</b></a>
+			      </li>
+			    </ul>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="contentlf">我的工单<p>部门经理下达的所有的工单，包含服务工单、巡检工单</p></div>
+					<div class="contentlr"><img src="img/zu1@2x.png" /></div>
+					<div class="clearfl"></div>
+				</div>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="contentlf">我的待办<p>所有待办的工单</p></div>
+					<div class="contentlr"><img src="img/zu2@2x.png" /></div>
+					<div class="clearfl"></div>
+				</div>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="contentlf">工单统计<p>工单数据统计，可清晰了解时间范围内完成工单完成情况</p></div>
+					<div class="contentlr"><img src="img/zu4@2x.png" /></div>
+					<div class="clearfl"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui(".mui-bar-nav").on('tap','#memus',function(){
+  				mui('#sheet1').popover('toggle');
+			})
+			
+		</script>
+	</body>
+
+</html>

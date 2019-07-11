@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>维护工单编辑</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.dtpicker.css" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1216913_q9v226y8699.css" />
+		<link rel="stylesheet" type="text/css" href="css/editwork.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-icon-arrowleft"></span>
+			<h1 id="title" class="mui-title">处理服务工单</h1><span class="iconfont iconxiaoxi msg"></span>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">项目名称
+					<span class="mui-badge">北辰分局工单系统</span>
+				</li>
+				<li class="mui-table-view-cell">项目编号
+					<span class="mui-badge">GKJK142121</span>
+				</li>
+				<li class="mui-table-view-cell">用户名称
+					<span class="mui-badge">北辰教育局</span>
+				</li>
+				<li class="mui-table-view-cell">创建日期
+					<span class="mui-badge">2018-11-11</span>
+				</li>
+				<li class="mui-table-view-cell">联系人
+					<span class="mui-badge">李建国</span>
+				</li>
+				<li class="mui-table-view-cell">联系电话
+					<span class="mui-badge">13752669999</span>
+				</li>
+				<li class="mui-table-view-cell">服务类型
+					<span class="mui-badge">弱电故障</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="javascript:;">服务事由</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="javascript:;">备件编辑<span class="mui-badge">已添加</span></a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="javascript:;">处理内容</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="timebtn" data-options="{}" href="javascript:;">服务结束时间<span class="mui-badge" id="selecttime"></span></a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="rangetype" href="javascript:;">服务范围类型<span class="mui-badge" id="selecttype"></span></a>
+				</li>
+			</ul>
+			<div class="footerbtns">
+				<button type="button" class="mui-btn mui-btn-outlined">待处理</button>
+				<button type="button" class="mui-btn mui-btn-outlined">申请转派</button>
+				<button type="button" class="mui-btn mui-btn-outlined overbtn">完成</button>
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.dtpicker.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//时间选择器 ：服务结束时间
+			var dtPicker = new mui.DtPicker({
+				type: 'datetime', //年月日类型
+				beginDate: new Date(1970, 0, 1),
+			});
+			var times = document.getElementById('timebtn');
+			times.addEventListener('tap', function(selectItems) {
+				dtPicker.show(function(selectItems) {
+					//获取选择的时间
+					var timevalue = selectItems.y.value + '-' + selectItems.m.value + '-' + selectItems.d.value + ' ' + selectItems.h.value + ':' + selectItems.i.value;
+					//console.log(timevalue);
+					$("#selecttime").html(timevalue);
+				});
+			}, false);
+
+			//服务范围类型
+			var picker = new mui.PopPicker();
+			picker.setData([{
+				value: 'qb',
+				text: '全部'
+			}, {
+				value: 'bn',
+				text: '保内'
+			}, {
+				value: 'bw',
+				text: '保外'
+			}]);
+
+			var rangetypebtn = document.getElementById('rangetype');
+			rangetypebtn.addEventListener('tap', function(event) {
+				picker.show(function(getSelectedItems) {
+					//console.log(getSelectedItems[0].text); 
+					var rangetypevalue = getSelectedItems[0].text;
+					$("#selecttype").html(rangetypevalue);
+				})
+			});
+		</script>
+	</body>
+
+</html>

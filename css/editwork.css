@@ -1,0 +1,148 @@
+.mui-bar-nav {
+	background-image: url(../img/topbg@2x.png);
+	background-size: 100% 100%;
+}
+
+.mui-bar-nav span {
+	color: #FFFFFF;
+}
+
+.mui-bar-nav .msg {
+	float: right;
+	line-height: 44px;
+	font-size: 20px;
+}
+.mui-bar-nav .magbtn{
+	font-size: 14px;
+	margin-right: 6px;
+}
+
+.mui-title {
+	color: #FFFFFF;
+}
+
+.mui-table-view {
+	margin: 16px;
+	border-radius: 10px;
+}
+
+.mui-table-view:before {
+	height: 0px;
+}
+
+.mui-table-view:after {
+	height: 0px;
+}
+
+.mui-table-view-cell {
+	font-size: 15px;
+	color: #666666;
+}
+
+.mui-table-view-cell:after {
+	right: 15px;
+}
+
+.mui-table-view-cell.mui-active {
+	background-color: #FFFFFF;
+	border-radius: 10px;
+}
+
+.mui-badge {
+	font-size: 15px;
+	color: #666666;
+	background-color: #FFFFFF;
+}
+
+.mui-table-view-cell>a:not(.mui-btn).mui-active {
+	background-color: #FFFFFF;
+	border-radius: 10px;
+}
+
+.footerbtns {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.mui-btn-outlined {
+	background-color: #ffffff;
+	height: 42px;
+	color: #8B8D96;
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+	font-size: 15px;
+	margin-right: 8px;
+}
+.cancelbtn{
+	background-color: #FFFFFF;
+	color: #8B8D96;
+	width: 156px;
+    margin-right: 9%;
+}
+.overbtn {
+	background-color: #4481E8;
+	color: #ffffff;
+	width: 146px;
+}
+#submitbtn{
+	width: 90%;
+	margin-right: 0px;
+}
+.customeropinion{
+	margin: 16px;
+}
+.customeropinion #textarea{
+	border: 1px solid #ffffff;
+    border-radius: 12px;
+    color: #ACADB1;
+    font-size: 14px;
+    padding: 20px;
+}
+.info{
+	margin: 16px;
+	border: 1px solid #ffffff;
+	background-color: #FFFFFF;
+	border-radius: 12px;
+}
+.info .signingspan{
+	font-size: 16px;
+    color: #666666;
+    display: inline-block;
+    margin: 20px 0px 0px 20px;
+}
+.info #signature{
+	height: 200px;
+}
+.info .reminder{
+	font-size: 22px;
+    color: #DADBE0;
+    position: absolute;
+    top: 46%;
+    left: 32%;
+}
+.evaluationps p{
+	margin: 10px;
+}
+.evaluationps .p1{
+	font-size: 15px;
+    color: #666666;
+}
+.evaluationps .p2{
+	font-size: 18px;
+    color: #ACADB1;
+}
+.evaluationps .p2 span{
+	color: #FFD102;
+}
+.evaluationps .p2 .white{
+	color: #ACADB1;
+}
+.evaluationps .p3 {
+	font-size: 15px;
+	color: #ACADB1;
+}
+.customeropinion .servicefor{
+	color: #666666 !important;
+    font-size: 13px;
+}
+

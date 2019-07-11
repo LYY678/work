@@ -1,0 +1,367 @@
+ * { 
+ 	touch-action: pan-y;
+}
+.mui-bar-nav span{
+	color: #FFFFFF;
+}
+.mui-bar-nav .msg{
+	float: right;
+    line-height: 44px;
+    font-size: 20px;
+}
+.mui-bar-nav {
+	background-image: url(../img/topbg@2x.png);
+	background-size: 100% 100%;
+}
+
+.mui-title {
+	color: #FFFFFF;
+}
+
+.mui-search {
+	padding: 10px 10px 0px 10px;
+	position: fixed;
+	background-color: #EFEFF4;
+	width: 100%;
+	z-index: 1;
+}
+.mui-search.mui-active:before{
+	left: 14px;
+	margin-top: -13px;
+}
+.mui-input-row.mui-search .mui-icon-clear {
+    top: 16px;
+    margin-right: 6px;
+}
+.mui-search .mui-placeholder {
+	line-height: 56px;
+	height: 44px;
+}
+
+.mui-search input[type=search] {
+	background-color: #FFFFFF;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted {
+	position: fixed;
+    z-index: 1;
+    top: 93px;
+    padding-bottom: 10px;
+    background-color: #EFEFF3;
+    left: 9px;
+}
+
+.mui-scroll-wrapper {
+	min-width: 320px;
+	width: 100%;
+	z-index: 0;
+	left: 0;
+	right: 0;
+	margin-top: 65px;
+}
+.mui-table-view{
+	background-color: #EFEFF3;
+	margin: 0px;
+}
+.mui-table-view:before{
+	background-color: #EFEFF3;
+}
+.tabcontrol {
+	margin-top: 143px;
+	background-color: #EFEFF3;
+}
+
+.mui-card {
+	padding: 16px;
+	border-radius: 10px;
+}
+
+.mui-card-header {
+	border-bottom: 1px solid #EBEBEB;
+	font-size: 16px;
+	padding: 0px 0px;
+	min-height: 30px;
+}
+
+.mui-card-content {
+	padding: 6px 0px 0px 0px;
+}
+
+.mui-card-footer {
+	padding: 0px 0px;
+	min-height: 30px;
+	color: #ACADB1;
+	font-size: 12px;
+}
+
+.mui-card-footer:before,
+.mui-card-header:after {
+	background-color: #FFFFFF;
+}
+
+.mui-card-header .xmtxt {
+	color: #161C43;
+}
+
+.mui-card-header .statetxt {
+	border-radius: 100px 100px;
+	color: #fff;
+	width: 18%;
+	text-align: center;
+	font-size: 10px;
+}
+.mui-card-header .stateone {
+	background-color: #FCC74F;
+}
+.mui-card-header .statetwo {
+	background-color: #4481E8;
+}
+.mui-card-header .statethree {
+	background-color: #D6D6D6;
+}
+.mui-card-header .statefour {
+	background-color: #78DEAB;
+}
+.rowone {
+	color: #ACADB1;
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.fllt {
+	float: left;
+	width: 30%;
+}
+
+.flrt {
+	float: right;
+	width: 30%;
+	text-align: right;
+}
+
+.flct {
+	display: inline-block;
+	width: 38%;
+	text-align: center;
+	color: #CCCFDB;
+}
+
+.clearfl {
+	clear: both;
+}
+
+.rowntwo {
+	font-size: 15px;
+	color: #161C43;
+	margin-top: 6px;
+}
+
+.footerlt {
+	margin-left: 20px;
+}
+
+.quan {
+	position: absolute;
+	right: 0;
+	left: 0;
+	height: 14px;
+	content: '';
+	width: 14px;
+	top: 8px;
+}
+
+.quan.red {
+	border: 2px solid #EA3223;
+	border-radius: 100px 100px;
+}
+
+.red {
+	color: #EA3223;
+}
+
+.quan.orange {
+	border: 2px solid #FF8900;
+	border-radius: 100px 100px;
+}
+
+.orange {
+	color: #FF8900;
+}
+
+.quan.green {
+	border: 2px solid #50D8BB;
+	border-radius: 100px 100px;
+}
+
+.green {
+	color: #50D8BB;
+}
+.quan.blue {
+	border: 2px solid #629EFF;
+	border-radius: 100px 100px;
+}
+
+.blue {
+	color: #629EFF;
+}
+
+/*客户事件*/
+.customerevent{
+	margin-top: 94px;
+}
+.grey{
+	margin-left: -20px;
+}
+/*首页*/
+.mui-card-content .contentlf{
+	width:40%;
+	height: 100%;
+	float: left;
+	font-size: 17px;
+    color: #1E2348;
+}
+.mui-card-content .contentlf p{
+	color: #ACADB1;
+    font-size: 13px;
+    margin-top: 10px;
+}
+.mui-card-content .contentlr{
+	width:50%;
+	height: 100%;
+	float: left;
+}
+.mui-card-content .contentlr img{
+	width: 100%;
+}
+/*备件编辑*/
+.partproject{
+	background-color: #fff;
+    margin: 60px 10px 0px 10px;
+    border-radius: 10px;
+    color: #666;
+    font-size: 15px;
+}
+.partproject:after{
+	height: 0px;
+}
+.mui-left{
+	float: left;
+}
+.mui-input-row:last-child{
+	border-bottom: 0px;
+}
+.partslist{
+	height: 50px !important;
+    line-height: 50px;
+    border-bottom: 1px solid #E1E6EF;
+}
+.mui-input-group .mui-input-row:after{
+	height: 0px;
+}
+.mui-checkbox.mui-left input[type=checkbox]{
+    left: 0px;
+    line-height: 40px;
+}
+.mui-checkbox input[type=checkbox]:before{
+	font-size: 20px;
+}
+.mui-checkbox.mui-left label{
+	padding-left: 26px;
+	color: #666666;
+    font-size: 15px;
+}
+.mui-checkbox.mui-left span {
+    color: #666666;
+    font-size: 15px;
+}
+.partslist .detailsright {
+    float: right;
+    color: #ACADB1;
+    font-size: 13px;
+    padding-right: 6px;
+}
+.mui-input-row .mui-numbox{
+	margin: 6px 8px;
+	background-color: #FFFFFF;
+	border: 0px;
+	padding-left: 34px;
+}
+.mui-numbox .minusbtn{
+	color: #E3E3E3;
+    background: #fff;
+    border: 1px solid #E3E3E3;
+    border-radius: 100px 100px;
+    width: 20px;
+    height: 20px;
+    top: 7px;
+    margin-left: 56px;
+}
+.mui-numbox .plussignbtn{
+	border: 1px solid #E3E3E3;
+    border-radius: 100px 100px;
+    height: 20px;
+    width: 20px;
+    background-color: #3991ec;
+    color: #fff;
+    left: 100px;
+    top: 7px;
+}
+.mui-numbox .numbeript{
+	border: 0px !important;
+    font-size: 13px;
+    color: #ACADB1;
+    margin-left: 30px;
+}
+.mui-input-group .projectlist:after{
+	height: 1px;
+}
+.projectlist label{
+	font-size: 15px;
+	color: #666;
+}
+.mui-bar-nav .magbtn{
+	font-size: 14px;
+}
+/*我的消息*/
+.msgeblob{
+	color: #ACADB1;
+	font-size: 13px;
+	padding: 0px;
+}
+.msgeblob .msgeblobtitle{
+	font-size: 16px;
+	color: #161C43;
+	margin-left: 18px;
+}
+.msgeblob .msgeblobtitle:before{
+	position: absolute;
+    margin-top: 6px;
+    margin-left: -18px;
+	content: '';
+	width: 1px;
+	height: 1px;
+	border: 5px solid #4481E8;
+	border-radius: 100px 100px;
+	background-color: #4481E8;
+}
+.msgeblob .msgeblobcontent{
+	padding-left: 18px;
+    display: block;
+}
+.msgeblob .msgeblobtime{
+	float: right;
+}
+/*消息数量*/
+.xiaoxi{
+	position: relative;
+    float: right;
+    background-color: #f30c0c;
+    border-radius: 100px 100px;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    padding-left: 1px;
+    display: block;
+    left: 26px;
+    top: 6px;
+}

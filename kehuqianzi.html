@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>客户意见与签字</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1216913_q9v226y8699.css" />
+		<link rel="stylesheet" type="text/css" href="css/editwork.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-icon-arrowleft"></span>
+			<h1 id="title" class="mui-title">客户意见与签字</h1><span class="msg magbtn">提交</span>
+		</header>
+		<div class="mui-content">
+			<div class="mui-input-row customeropinion">
+				<textarea id="textarea" rows="3" placeholder="请填写您的意见"></textarea>
+			</div>
+			<div class="customersignature">
+				<!--签名窗口-->
+				<div class="info">
+					<span class="signingspan">客户签字</span>
+					<div id="autographedconter">
+						<p class="reminder">请在此处签字</p>
+						<div id="signature"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

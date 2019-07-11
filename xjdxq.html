@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>巡检单详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1216913_rrj83srj3p.css" />
+		<link rel="stylesheet" type="text/css" href="css/bjxjd.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-icon-arrowleft"></span>
+			<h1 id="title" class="mui-title">巡检单</h1><span class="iconfont iconxiaoxi msg magbtn"></span>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">网络系统-路由器</a>
+						<div class="mui-collapse-content">
+							<div class="mui-input-row mui-radio projectlist">
+								<label class="abnormaltrue">CPU</label>
+								<div class="optionsbtn">
+									<span class="cause">(原因：不知道不知道不知...)</span>
+									<span class="abnormaltrue causespn">异常</span>
+									<span class="iconfont iconyichang yichangico" onclick="OpenExceptionMsg()"></span>
+								</div>
+							</div>
+							<div class="mui-input-row mui-radio projectlist">
+								<label>CPU</label>
+								<div class="optionsbtn normaldiv">
+									<span class="normal abnormalfalse normalspn">正常</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function OpenExceptionMsg() {
+				mui.prompt('异常原因', "ss", '提示', ['确定 '], function(e) {
+					if(e.index == 1) {
+						var value = $('.mui-popup-input textarea').val();
+					}
+				}, 'div');
+				$('.mui-popup-input').html('');
+				$('.mui-popup-input').append('<textarea rows="5" placeholder="" readonly="readonly"></textarea>');
+			}
+		</script>
+	</body>
+
+</html>

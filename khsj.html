@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我的事件</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1216913_q9v226y8699.css"/>
+		<link rel="stylesheet" type="text/css" href="css/workorderlist.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-icon-arrowleft"></span><h1 id="title" class="mui-title">我的事件</h1><span class="iconfont iconxiaoxi msg"></span>
+		</header>
+		<div class="mui-content">
+			<div class="mui-input-row mui-search">
+				<input id="keyword" type="search" class="mui-input-clear" placeholder="请输入关键字">
+			</div>
+			<div class="mui-content">
+				
+				<div class="mui-scroll-wrapper tabcontrol  customerevent" id="searchResultDiv" touch-action: none>
+					<div class="mui-scroll" id="mainScroll">
+						<div id="item1" class="mui-control-content mui-table-view mui-active">
+							<!--
+                            	作者：liyanyan
+                            	时间：2019-06-04
+                            	描述：dome添加至此
+                            -->
+							<!--<div class="mui-card">
+								<div class="mui-card-header">
+									<div class="xmtxt">北辰公安局</div>
+									<div class="statetxt stateone">待处理</div>
+								</div>
+								<div class="mui-card-content">
+									<div class="rowone">
+										<div class="fllt">事件创建时间</div>
+										<div class="flrt">事件结束时间</div>
+										<div class="clearfl"></div>
+									</div>
+									<div class="rowntwo">
+										<div class="fllt">2018-05-01</div>
+										<div class="flct">------<span class="mui-icon mui-icon-weixin"></span>------</div>
+										<div class="flrt">2018-05-01</div>
+										<div class="clearfl"></div>
+									</div>
+								</div>
+								<div class="mui-card-footer">
+									<div class="footerlt"><span class="quan red"></span>联系人：<span class="red">张三</span></div>
+									<div class="footerrt">联系电话：<span class="wxname">13752664771</span></div>
+								</div>
+							</div>-->
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/tt.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//分页参数（参数名固定不可变）
+			var pageConfig = {
+				pageIndex: 0,
+				pageSize: 10, //每页条数（不设置时，默认为10）
+			};
+
+			//上拉加载更多
+			mui.init({
+				pullRefresh: {
+					container: "#searchResultDiv", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: true, //可选,默认false.自动上拉加载一次
+						contentinit: '上拉加载更多...',
+						contentdown: '上拉加载更多...',
+						contentover: '释放立即刷新',
+						contentnomore: '数据加载完毕',
+						contentrefresh: '正在加载更多...', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: pullupRefresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+
+			/**
+			 * 上拉加载拉取追加列表 
+			 */
+
+			function pullupRefresh() {
+				setTimeout(function() {
+					pageConfig.pageIndex = pageConfig.pageIndex + 1;
+					var firstIndex = 10 * (pageConfig.pageIndex - 1);
+					getTitleAjax(firstIndex);
+				}, 1000);
+			}
+
+			var clicktag = 0; //设置按钮点击默认值0
+			function getTitleAjax(startNum) { //参数：当前数据开始数
+				if(startNum == 0) {
+					pageConfig.pageIndex = 1;
+				}
+                //参数  关键字   分页
+                var keyword = $("#keyword").val();
+				var pagination = {};
+				pagination.length = 10;
+			    pagination.start = startNum;
+				pagination.dir = 'desc';
+				pagination.orderby = 'CreateTime';
+				//请求接口地址
+				var url='我的事件获取url';
+				
+				//防止恶意连续点击
+				if(clicktag == 0) {
+					clicktag = 1; //当标注为1时按钮失效
+					$.get('js/tt.js', function(data) {
+						var data = JSON.parse(data);
+						if(data.data.length > 0) { //成功
+							var dataArr = data.data;
+							if(startNum == 0) {
+								$("#item1").html("");
+							}
+							for(var i = 0; i < dataArr.length; i++) {
+								var id = dataArr[i].id; //id
+								var name = dataArr[i].name; //项目名称
+								var state = dataArr[i].state; //事件状态
+								var time = dataArr[i].time; //创建时间
+								var endtime = dataArr[i].endtime; //开始时间
+								var lxrname = dataArr[i].lxrname; //联系人
+								var phone = dataArr[i].phone; //联系人电话
+								//创建DOM
+								var div = '<div onclick="jumpToMsgMain(this)" data-id="' + id + '" class="mui-card">';
+								div += '<div class="mui-card-header"><div class="xmtxt">' + name + '</div>' + gdzt(state) + '</div>';
+								div += '<div class="mui-card-content"><div class="rowone"><div class="fllt">事件创建时间</div><div class="flrt">事件结束时间</div><div class="clearfl"></div></div><div class="rowntwo"><div class="fllt">' + time + '</div><div class="flct">------<span class="iconfont iconnaozhong"></span>------</div><div class="flrt">' + endtime + '</div><div class="clearfl"></div></div></div>';
+								div += '<div class="mui-card-footer"><div class="footerlt"><span class="grey"></span>联系人：<span>'+ lxrname + '</span></div><div class="footerrt">联系电话：<span>' + phone + '</span></div></div>';
+								$("#item1").append(div);
+								if(startNum == 0 && i == 0) {
+									mui('#searchResultDiv').pullRefresh().scrollTo(0, 0, 1000); //滚动到顶部
+								}
+							}
+							//全部数据加载完成 禁用上拉加载
+							if(startNum + 10 >= parseInt(data.recordsTotal)) {
+								console.log("关闭上拉功能");
+								mui('#searchResultDiv').pullRefresh().endPullupToRefresh(true);
+							} else {
+								mui('#searchResultDiv').pullRefresh().endPullupToRefresh(false);
+								mui('#searchResultDiv').pullRefresh().enablePullupToRefresh();
+							}
+						} else {
+							mui.alert("暂无数据", function() {
+								window.location.reload();
+							});
+						}
+					});
+					setTimeout(function() {
+						clicktag = 0
+					}, 1000); //防止按钮被2秒内被连续恶意点击
+				} else {
+					mui.alert("操作频繁");
+				}
+			}
+
+			//列表的点击跳转事件
+			mui('.mui-table-view').on('tap', '.mui-card', jumpToMsgMain);
+
+			function jumpToMsgMain() {
+				var id = $(this).attr("data-id");
+				console.log("id------->" + id);
+//				mui.openWindow({
+//					url: "detail.html",
+//					id: "detail.html",
+//					show: {
+//						autoShow: true,
+//						aniShow: "slide-in-right",
+//					},
+//					extras: {
+//						myData: id //扩展参数、创建子页面传值
+//					}
+//				});
+			}
+			
+            //事件状态
+			function gdzt(state) {
+				if(state == 1) {
+					return '<div class="statetxt stateone">待评价</div>';
+				} else if(state == 2) {
+					return '<div class="statetxt statetwo">处理中</div>';
+				} else if(state==3){
+					return '<div class="statetxt statethree">完结</div>';
+				} else{
+					return '<div class="statetxt statefour">待处理</div>';
+				}
+			}
+			
+            
+		</script>
+
+	</body>
+
+</html>
